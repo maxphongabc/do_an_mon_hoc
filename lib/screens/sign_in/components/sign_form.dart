@@ -12,7 +12,6 @@ class SignForm extends StatefulWidget {
   const SignForm({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _SignFormState createState() => _SignFormState();
 }
 
@@ -63,8 +62,8 @@ class _SignFormState extends State<SignForm> {
               const Text('Remember me'),
               const Spacer(),
               GestureDetector(
-                onTap: () => Navigator.pushNamed(
-                    context, ForgotPasswordScreen.routeName),
+                onTap: () => Navigator.push(
+                    context,MaterialPageRoute(builder:(context)=>const ForgotPasswordScreen())),
                 child: const Text(
                   'Forgot Password',
                   style: TextStyle(decoration: TextDecoration.underline),
@@ -79,9 +78,8 @@ class _SignFormState extends State<SignForm> {
             press: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
-                // if all are valid then go to success screen
                 KeyboardUtil.hideKeyboard(context);
-                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const LoginSuccessScreen()));
               }
             },
           ),
@@ -100,7 +98,6 @@ class _SignFormState extends State<SignForm> {
         } else if (value.length >= 8) {
           removeError(error: kShortPassError);
         }
-        // ignore: avoid_returning_null_for_void
         return null;
       },
       validator: (value) {
@@ -116,8 +113,6 @@ class _SignFormState extends State<SignForm> {
       decoration: const InputDecoration(
         labelText: 'Password',
         hintText: 'Enter your password',
-        // If  you are using latest version of flutter then lable text and hint text shown like this
-        // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSurffixIcon(svgIcon: 'assets/icons/Lock.svg'),
       ),
@@ -149,8 +144,6 @@ class _SignFormState extends State<SignForm> {
       decoration: const InputDecoration(
         labelText: 'Email',
         hintText: 'Enter your email',
-        // If  you are using latest version of flutter then lable text and hint text shown like this
-        // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSurffixIcon(svgIcon: 'assets/icons/Mail.svg'),
       ),

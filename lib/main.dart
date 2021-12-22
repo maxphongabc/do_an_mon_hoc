@@ -1,7 +1,4 @@
 import 'package:do_an_mon_hoc/constants.dart';
-import 'package:do_an_mon_hoc/screens/forgot_password/forgot_password_screen.dart';
-import 'package:do_an_mon_hoc/screens/sign_in/signin_screen.dart';
-import 'package:do_an_mon_hoc/screens/sign_up/sign_up_screen.dart';
 import 'package:do_an_mon_hoc/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +19,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const WelcomeScreen(),
+      home: WelcomeScreen(),
     );
   } 
 }
