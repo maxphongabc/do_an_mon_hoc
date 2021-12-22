@@ -2,7 +2,6 @@ import 'package:do_an_mon_hoc/components/default_button.dart';
 import 'package:do_an_mon_hoc/components/size_config.dart';
 import 'package:do_an_mon_hoc/constants.dart';
 import 'package:do_an_mon_hoc/screens/sign_in/signin_screen.dart';
-import 'package:do_an_mon_hoc/screens/sign_up/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'content.dart';
 
@@ -71,7 +70,7 @@ class _BodyState extends State<Body> {
                     DefaultButton(
                       text: 'Continue',
                       press: () {
-                             Navigator.push(context,MaterialPageRoute(builder: (context)=>const SignInScreen()));
+                             Navigator.push(context,MaterialPageRoute(builder: (context)=> SignInScreen()));
                       },
                     ),
                     const Spacer(),
