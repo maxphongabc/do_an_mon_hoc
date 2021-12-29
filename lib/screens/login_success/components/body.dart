@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
         ),
         SizedBox(height: SizeConfig.screenHeight * 0.08),
         Text(
-          "Login Success",
+          "Đăng nhập thành công",
           style: TextStyle(
             fontSize: getProportionateScreenWidth(30),
             fontWeight: FontWeight.bold,
@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
         SizedBox(
           width: SizeConfig.screenWidth * 0.6,
           child: DefaultButton(
-            text: "Back to home",
+            text: "Trang chủ",
             press: () {
               Navigator.push(context,MaterialPageRoute(builder: (context)=> HomeScreen()));
             },

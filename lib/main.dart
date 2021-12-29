@@ -1,4 +1,5 @@
 import 'package:do_an_mon_hoc/constants.dart';
+import 'package:do_an_mon_hoc/screens/home/home_screen.dart';
 import 'package:do_an_mon_hoc/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: WelcomeScreen(),
+      home: HomeScreen(),
     );
   } 
 }

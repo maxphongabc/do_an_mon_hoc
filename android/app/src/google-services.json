@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "912266517178",
+    "project_id": "doanmonhoc-98c69",
+    "storage_bucket": "doanmonhoc-98c69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912266517178:android:e2c1b6c21a82092e5a4083",
+        "android_client_info": {
+          "package_name": "com.example.do_an_mon_hoc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912266517178-4a4molfoue2csdggt6v8gj62e2a0e2rp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6bOdJshlSq0UrsWihevD9IZvoxQOlxlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912266517178-4a4molfoue2csdggt6v8gj62e2a0e2rp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

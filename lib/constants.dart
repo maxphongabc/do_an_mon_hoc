@@ -1,11 +1,13 @@
 import 'package:do_an_mon_hoc/components/size_config.dart';
 import 'package:flutter/material.dart';
 
+const kDefaultPaddin = 20.0;
 const kPrimaryColor = Color(0xFF6F35A5);
 const kPrimaryLightColor = Color(0xFFF1E6FF);
 const kAnimationDuration = Duration(milliseconds: 200);
 const kSecondaryColor = Color(0xFF979797);
 const kTextColor = Color(0xFF757575);
+const kTextLightColor = Color(0xFFACACAC);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
