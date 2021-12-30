@@ -8,12 +8,11 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: prefer_const_constructors
     return Scaffold(
        appBar: AppBar(
         title: const Text("Đăng nhập"),
       ),
-      body: const Body(),
+      body: Body(),
     );
   }
 }
