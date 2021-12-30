@@ -1,7 +1,4 @@
 import 'package:do_an_mon_hoc/components/size_config.dart';
-import 'package:do_an_mon_hoc/model/sanpham.dart';
-import 'package:do_an_mon_hoc/screens/details/details_screen.dart';
-import 'package:do_an_mon_hoc/screens/home/components/item_card.dart';
 import 'package:flutter/material.dart';
 import 'section_title.dart';
 

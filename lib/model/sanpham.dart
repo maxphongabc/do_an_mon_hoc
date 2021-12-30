@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 class SanPham{
   final int Id,Gia;
   final String Ten_Sp,Hinh_Anh,Mo_Ta;
+   final Color color;
   // final DateTime Ngay_Tao;
   // final bool TrangThai;
   SanPham({
+    required this.color,
     required this.Id,
     required this.Mo_Ta,
     required this.Gia,
@@ -31,36 +33,41 @@ List<SanPham> sanphams=[
     SanPham(
       Id: 1,
       Ten_Sp: "IphoneX",
+      color: Colors.black,
       Gia: 900000,
-      Hinh_Anh: "",
+      Hinh_Anh: "assets/images/iphone_7.png",
       Mo_Ta: "Iphone xịn"
     ),
      SanPham(
       Id: 2,
       Ten_Sp: "IphoneX",
+      color: Colors.black,
       Gia: 900000,
-      Hinh_Anh: "",
+      Hinh_Anh: "assets/images/iphone_7.png",
       Mo_Ta: "Iphone xịn"
     ),
      SanPham(
       Id: 3,
       Ten_Sp: "IphoneX",
+      color: Colors.black,
       Gia: 900000,
-      Hinh_Anh: "",
+      Hinh_Anh: "assets/images/iphone_7.png",
       Mo_Ta: "Iphone xịn"
     ),
      SanPham(
       Id: 4,
       Ten_Sp: "IphoneX",
+      color: Colors.black,
       Gia: 900000,
-      Hinh_Anh: "",
+      Hinh_Anh: "assets/images/iphone_7.png",
       Mo_Ta: "Iphone xịn"
     ),
      SanPham(
       Id: 5,
       Ten_Sp: "IphoneX",
+      color: Colors.black,
       Gia: 900000,
-      Hinh_Anh: "",
+      Hinh_Anh: "assets/images/iphone_7.png",
       Mo_Ta: "Iphone xịn"
     ),
  ];

@@ -1,74 +1,55 @@
-import 'package:do_an_mon_hoc/components/size_config.dart';
+import 'package:do_an_mon_hoc/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-
-class Categories extends StatelessWidget {
-  const Categories({Key? key}) : super(key: key);
+class Categories extends StatefulWidget {
+  const Categories({ Key? key }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    final List<Map<String, dynamic>> categories = [
-      {'icon': 'assets/icons/Flash Icon.svg', 'text': 'Flash Deal'},
-      {'icon': "assets/icons/Bill Icon.svg", "text": "Bill"},
-      {"icon": "assets/icons/Game Icon.svg", "text": "Game"},
-      {"icon": "assets/icons/Gift Icon.svg", "text": "Daily Gift"},
-      {"icon": "assets/icons/Discover.svg", "text": "More"},
-    ];
-    return Padding(
-      padding: EdgeInsets.all(getProportionateScreenWidth(20)),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        // ignore: always_specify_types
-        children: List.generate(
-          categories.length,
-          // ignore: always_specify_types
-          (index) => CategoryCard(
-            icon: categories[index]["icon"],
-            text: categories[index]["text"],
-            press: () {},
-          ),
-        ),
-      ),
-    );
-  }
+  _CategoriesState createState() => _CategoriesState();
 }
 
-class CategoryCard extends StatelessWidget {
-  const CategoryCard({
-    Key? key,
-    required this.icon,
-    required this.text,
-    required this.press,
-  }) : super(key: key);
-
-  final String? icon, text;
-  final GestureTapCallback press;
-
+class _CategoriesState extends State<Categories> {
+  List<String> categories = ["Iphone","AirPods","Phụ kiện"];
+  int selectedIndex = 0 ;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: press,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
       child: SizedBox(
-        width: getProportionateScreenWidth(55),
-        child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.all(getProportionateScreenWidth(15)),
-              height: getProportionateScreenWidth(55),
-              width: getProportionateScreenWidth(55),
-              decoration: BoxDecoration(
-                color: Color(0xFFFFECDF),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: SvgPicture.asset(icon!),
-            ),
-            SizedBox(height: 5),
-            Text(text!, textAlign: TextAlign.center)
-          ],
-        ),
+        height: 25,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: categories.length,
+          itemBuilder: (context,index)=>buildCategory(index)),
       ),
     );
   }
+
+  Widget buildCategory(int index) => GestureDetector(
+    onTap: (){
+      setState(() {
+        selectedIndex = index ;
+      });
+    },
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(categories[index],
+          style: const TextStyle(
+          fontWeight: FontWeight.bold,
+          color: kTextColor,
+          ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: kDefaultPaddin / 4),
+            height: 2,
+            width: 30,
+            color: selectedIndex == index ? Colors.black : Colors.white,
+          )
+        ],
+      ),
+    ),
+  );
 }

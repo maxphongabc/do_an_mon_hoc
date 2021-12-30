@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
                   ),
                 ),
                 const Text(
-                  "Đăng nhập vào bằng Email và mật khẩu \nhoặc sử dụng mạng xã hội",
+                  "Sign in with your email and password  \nor continue with social media",
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: SizeConfig.screenHeight * 0.08),

@@ -5,7 +5,7 @@ import 'package:do_an_mon_hoc/components/size_config.dart';
 import 'package:do_an_mon_hoc/constants.dart';
 import 'package:do_an_mon_hoc/helper/keyboar.dart';
 import 'package:do_an_mon_hoc/screens/forgot_password/forgot_password_screen.dart';
-import 'package:do_an_mon_hoc/screens/login_success/login_success_screen.dart';
+import 'package:do_an_mon_hoc/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignForm extends StatefulWidget {
@@ -65,7 +65,7 @@ class _SignFormState extends State<SignForm> {
                 onTap: () => Navigator.push(
                     context,MaterialPageRoute(builder:(context)=>const ForgotPasswordScreen())),
                 child: const Text(
-                  'Quên mật khẩu ?',
+                  'Quên mật khẩu',
                   style: TextStyle(decoration: TextDecoration.underline),
                 ),
               )
@@ -79,7 +79,7 @@ class _SignFormState extends State<SignForm> {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 KeyboardUtil.hideKeyboard(context);
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>const LoginSuccessScreen()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> HomeScreen()));
               }
             },
           ),
@@ -143,7 +143,7 @@ class _SignFormState extends State<SignForm> {
       },
       decoration: const InputDecoration(
         labelText: 'Email',
-        hintText: 'Nhập email',
+        hintText: 'Nhập Email',
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSurffixIcon(svgIcon: 'assets/icons/Mail.svg'),
       ),

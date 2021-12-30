@@ -1,8 +1,6 @@
 import 'package:do_an_mon_hoc/components/custom_surfix_icon.dart';
-import 'package:do_an_mon_hoc/components/default_button.dart';
 import 'package:do_an_mon_hoc/components/form_error.dart';
 import 'package:do_an_mon_hoc/components/size_config.dart';
-import 'package:do_an_mon_hoc/screens/otp/otp_screen.dart';
 import 'package:flutter/material.dart';
 import '../../../constants.dart';
 
@@ -52,14 +50,6 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
           buildAddressFormField(),
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(40)),
-          DefaultButton(
-            text: "continue",
-            press: () {
-              if (_formKey.currentState!.validate()) {
-                Navigator.push(context,MaterialPageRoute(builder: (context)=> OtpScreen()));
-              }
-            },
-          ),
         ],
       ),
     );
