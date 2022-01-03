@@ -8,8 +8,8 @@ class Quyen{
   final String Ten_Quyen;
   final bool TrangThai;
   Quyen({
-    required this.Id,
-    required this.Ten_Quyen,
-    required this.TrangThai,
+     this.Id,
+     this.Ten_Quyen,
+     this.TrangThai,
   });
 }

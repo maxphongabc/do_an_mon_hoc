@@ -5,7 +5,7 @@ import 'package:do_an_mon_hoc/screens/home/components/categories.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
-  const Body ({ Key? key }) : super(key: key);
+  const Body ({ Key key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
         child: Text("IPHONE",
         style: Theme.of(context)
         .textTheme
-        .headline5!.copyWith(fontWeight: FontWeight.bold),
+        .headline5.copyWith(fontWeight: FontWeight.bold),
         ),
       ),
       const Categories(),
@@ -42,6 +42,7 @@ class Body extends StatelessWidget {
         ),
         const Text("\n 22.700.000đ",
         style: TextStyle(fontWeight: FontWeight.bold),)
+        
       ],
     );
   }
@@ -51,8 +52,8 @@ class ItemCart extends StatelessWidget {
   final SanPham product;
 
   const ItemCart({
-  Key? key,
-  required this.product, 
+  Key key,
+   this.product, 
 
   }) : super(key: key);
 

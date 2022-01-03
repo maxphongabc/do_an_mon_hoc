@@ -6,11 +6,11 @@ class ChiTietHoaDon{
   final DateTime Ngay_Tao;
   final int Gia;
   ChiTietHoaDon({
-    required this.Id,
-    required this.HoaDon_Id,
-    required this.SanPham_Id,
-    required this.So_Luong,
-    required this.Ngay_Tao,
-    required this.Gia,
+     this.Id,
+     this.HoaDon_Id,
+     this.SanPham_Id,
+     this.So_Luong,
+     this.Ngay_Tao,
+     this.Gia,
   });
 }
