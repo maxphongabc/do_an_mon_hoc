@@ -4,7 +4,7 @@ class Cart {
   final SanPham sanpham;
   final int numOfItem;
 
-  Cart({required this.sanpham, required this.numOfItem});
+  Cart({ this.sanpham,  this.numOfItem});
 }
 
 // Demo data for our cart

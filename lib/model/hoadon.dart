@@ -9,16 +9,16 @@ class HoaDon{
   final int Trang_Thai;
   final DateTime Ngay_Tao,Ngay_Giao_Hang,Ngay_Nhan_Hang;
   HoaDon({
-    required this.Id,
-    required this.NguoiDung_Id,
-    required this.Tong_Tien,
-    required this.Dia_Chi_Nhan,
-    required this.Ten_Nguoi_Nhan,
-    required this.Email_Nguoi_Nhan,
-    required this.Ngay_Tao,
-    required this.Mo_Ta,
-    required this.Ngay_Giao_Hang,
-    required this.Ngay_Nhan_Hang,
-    required this.Trang_Thai,
+     this.Id,
+     this.NguoiDung_Id,
+     this.Tong_Tien,
+     this.Dia_Chi_Nhan,
+     this.Ten_Nguoi_Nhan,
+     this.Email_Nguoi_Nhan,
+     this.Ngay_Tao,
+     this.Mo_Ta,
+     this.Ngay_Giao_Hang,
+     this.Ngay_Nhan_Hang,
+     this.Trang_Thai,
   });
 }

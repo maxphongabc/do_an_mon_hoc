@@ -8,12 +8,12 @@ class SanPham{
   // final DateTime Ngay_Tao;
   // final bool TrangThai;
   SanPham({
-    required this.color,
-    required this.Id,
-    required this.Mo_Ta,
-    required this.Gia,
-    required this.Hinh_Anh,
-    required this.Ten_Sp,
+     this.color,
+     this.Id,
+     this.Mo_Ta,
+     this.Gia,
+     this.Hinh_Anh,
+     this.Ten_Sp,
     // required this.Ngay_Tao, 
     // required this.So_Luong,
     // required this.Camera_Sau,

@@ -7,10 +7,10 @@ class TrangThaiGiaoHang{
   final bool Trang_Thai;
   final DateTime Ngay_Tao;
   TrangThaiGiaoHang({
-    required this.Ngay_Tao,
-    required this.Mo_Ta,
-    required this.Id,
-    required this.Trang_Thai,
-    required this.Ten_Trang_Thai,
+     this.Ngay_Tao,
+     this.Mo_Ta,
+     this.Id,
+     this.Trang_Thai,
+     this.Ten_Trang_Thai,
   });
 }

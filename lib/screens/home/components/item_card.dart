@@ -6,9 +6,9 @@ class ItemCard extends StatelessWidget {
   final SanPham sanpham;
   final Function press;
   const ItemCard({
-     Key? key,
-    required this.sanpham,
-     required this.press,
+     Key key,
+     this.sanpham,
+      this.press,
   }) : super(key: key);
 
   @override

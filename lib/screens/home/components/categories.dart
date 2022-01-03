@@ -2,7 +2,7 @@ import 'package:do_an_mon_hoc/constants.dart';
 import 'package:flutter/material.dart';
 
 class Categories extends StatefulWidget {
-  const Categories({ Key? key }) : super(key: key);
+  const Categories({ Key key }) : super(key: key);
 
   @override
   _CategoriesState createState() => _CategoriesState();

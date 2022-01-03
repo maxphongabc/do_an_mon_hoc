@@ -1,13 +1,12 @@
 import 'package:do_an_mon_hoc/components/enums.dart';
 import 'package:do_an_mon_hoc/screens/home/home_screen.dart';
-import 'package:do_an_mon_hoc/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../constants.dart';
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({
-    Key? key,
-    required this.selectedMenu,
+    Key key,
+     this.selectedMenu,
   }) : super(key: key);
 
   final MenuState selectedMenu;
@@ -58,16 +57,6 @@ class CustomBottomNavBar extends StatelessWidget {
               IconButton(
                 icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
                 onPressed: () {},
-              ),
-              IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/User Icon.svg",
-                  color: MenuState.profile == selectedMenu
-                      ? kPrimaryColor
-                      : inActiveIconColor,
-                ),
-                onPressed: () =>
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=> ProfileScreen())),
               ),
             ],
           )),
