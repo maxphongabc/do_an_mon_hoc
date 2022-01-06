@@ -32,30 +32,6 @@ class RegistrationWidget extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   child: TextField(
-                    controller: userController.name,
-                    decoration: InputDecoration(
-                        icon: Icon(Icons.person),
-                        fillColor: Colors.white,
-                        border: InputBorder.none,
-                        hintText: "Tên"),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width / 1.2,
-                margin: EdgeInsets.only(top: 30),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  color: Colors.grey.withOpacity(.3),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                  child: TextField(
                     controller: userController.email,
                     decoration: InputDecoration(
                         icon: Icon(Icons.email_outlined),
@@ -81,6 +57,7 @@ class RegistrationWidget extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   child: TextField(
+                    obscureText: true,
                     controller: userController.password,
                     decoration: InputDecoration(
                         icon: Icon(Icons.lock),
@@ -105,7 +82,8 @@ class RegistrationWidget extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   child: TextField(
-                    controller: userController.password,
+                     obscureText: true,
+                    controller: userController.password2,
                     decoration: InputDecoration(
                         icon: Icon(Icons.lock),
                         fillColor: Colors.white,
