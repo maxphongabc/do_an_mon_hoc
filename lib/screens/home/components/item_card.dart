@@ -1,19 +1,21 @@
-import 'package:do_an_mon_hoc/constants.dart';
-import 'package:do_an_mon_hoc/model/sanpham.dart';
+import 'package:do_an_mon_hoc/model/Product.dart';
 import 'package:flutter/material.dart';
 
+import '../../../constants.dart';
+
 class ItemCard extends StatelessWidget {
-  final SanPham sanpham;
+  final Product product;
   final Function press;
   const ItemCard({
-     Key key,
-     this.sanpham,
-      this.press,
+    Key key,
+    this.product,
+    this.press,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: press,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -22,14 +24,15 @@ class ItemCard extends StatelessWidget {
               padding: EdgeInsets.all(kDefaultPaddin),
               // For  demo we use fixed height  and width
               // Now we dont need them
-              height: 180,
-              width: 160,
+              // height: 180,
+              // width: 160,
               decoration: BoxDecoration(
+                color: product.color,
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Hero(
-                tag: "${sanpham.Id}",
-                child: Image.asset(sanpham.Hinh_Anh),
+                tag: "${product.id}",
+                child: Image.asset(product.image),
               ),
             ),
           ),
@@ -37,12 +40,12 @@ class ItemCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin / 4),
             child: Text(
               // products is out demo list
-              sanpham.Ten_Sp,
+              product.title,
               style: TextStyle(color: kTextLightColor),
             ),
           ),
           Text(
-            "\$${sanpham.Gia}",
+            "\$${product.price}",
             style: TextStyle(fontWeight: FontWeight.bold),
           )
         ],

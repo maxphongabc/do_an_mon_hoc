@@ -1,4 +1,3 @@
-
 import 'package:do_an_mon_hoc/constants/app_constants.dart';
 import 'package:do_an_mon_hoc/constants/firebase.dart';
 import 'package:do_an_mon_hoc/helper/showLoading.dart';
@@ -16,7 +15,8 @@ class UserController extends GetxController {
   TextEditingController name = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
-  String usersCollection = "nguoidungs";
+  TextEditingController password2= TextEditingController();
+  String usersCollection = "User";
   Rx<NguoiDung> nguoiDung = NguoiDung().obs;
 
   @override
@@ -38,7 +38,7 @@ class UserController extends GetxController {
 
   void signIn() async {
     try {
-      showLoading();
+      // showLoading();
       await auth
           .signInWithEmailAndPassword(
               email: email.text.trim(), password: password.text.trim())
@@ -52,19 +52,19 @@ class UserController extends GetxController {
   }
 
   void signUp() async {
-    showLoading();
     try {
-      await auth
-          .createUserWithEmailAndPassword(
-              email: email.text.trim(), password: password.text.trim())
-          .then((result) {
-        String _userId = result.user.uid;
-        _addUserToFirestore(_userId);
-        _clearControllers();
-      });
+        await auth
+            .createUserWithEmailAndPassword(
+                email: email.text.trim(), password: password.text.trim())
+            .then((result) {
+          String _userId = result.user.uid;
+          _addUserToFirestore(_userId);
+          _clearControllers();
+        });
     } catch (e) {
       debugPrint(e.toString());
       Get.snackbar("Đăng ký thất bại", "Thử lại");
+      dismissLoadingWidget();
     }
   }
 
@@ -81,11 +81,13 @@ class UserController extends GetxController {
     });
   }
 
- 
-
   _clearControllers() {
     name.clear();
     email.clear();
+    password.clear();
+  }
+  _clearpassControllers(){
+    password2.clear();
     password.clear();
   }
 
