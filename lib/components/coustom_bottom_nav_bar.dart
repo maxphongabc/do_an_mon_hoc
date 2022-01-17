@@ -44,7 +44,7 @@ class CustomBottomNavBar extends StatelessWidget {
                       : inActiveIconColor,
                 ),
                 onPressed: () =>
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=> HomeScreen())),
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>const HomeScreen())),
               ),
                  IconButton(
                 icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),

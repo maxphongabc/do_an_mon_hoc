@@ -31,7 +31,7 @@ class CustomButton extends StatelessWidget {
               color: bgColor ?? Colors.black,
      ),
           child: Container(
-            margin: EdgeInsets.all(14),
+            margin:const EdgeInsets.all(14),
             alignment: Alignment.center,
             child: CustomText(
               text: text,

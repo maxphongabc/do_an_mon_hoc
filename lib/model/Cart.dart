@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:do_an_mon_hoc/model/sanpham.dart';
 
 class Cart {
