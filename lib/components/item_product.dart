@@ -1,7 +1,8 @@
+// ignore_for_file: unnecessary_import
+
 import 'dart:ui';
 import 'package:do_an_mon_hoc/model/sanpham.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class TrendingItem extends StatelessWidget{
   final SanPham sanpham;

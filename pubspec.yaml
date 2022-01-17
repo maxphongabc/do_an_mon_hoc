@@ -17,6 +17,7 @@ dependencies:
 
 
 dev_dependencies:
+  flutter_lints: ^1.0.4
   flutter_test:
     sdk: flutter
   #   firebase_core: ^1.8.0   //last version
