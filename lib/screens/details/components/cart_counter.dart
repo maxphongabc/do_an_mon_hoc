@@ -2,6 +2,8 @@ import 'package:do_an_mon_hoc/constants.dart';
 import 'package:flutter/material.dart';
 
 class CartCounter extends StatefulWidget {
+  const CartCounter({Key key}) : super(key: key);
+
   @override
   _CartCounterState createState() => _CartCounterState();
 }

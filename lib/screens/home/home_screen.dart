@@ -34,14 +34,14 @@ class HomeScreen  extends StatelessWidget {
           child: ListView(
             children: [
               Obx(()=>UserAccountsDrawerHeader(
-                decoration: BoxDecoration(
+                decoration:const BoxDecoration(
                   color: Colors.black,
                 ),
                   accountEmail: Text(userController.nguoiDung.value.email?? ""), accountName: null,)),
 
               ListTile(
-                leading: Icon(Icons.book),
-                title: CustomText(
+                leading:const Icon(Icons.book),
+                title:const CustomText(
                   text: "Lịch sử giao dịch",
                 ),
                 onTap: () {
@@ -52,13 +52,13 @@ class HomeScreen  extends StatelessWidget {
                 onTap: () {
                   userController.signOut();
                 },
-                leading: Icon(Icons.exit_to_app),
-                title: Text("Đăng xuất"),
+                leading:const Icon(Icons.exit_to_app),
+                title:const Text("Đăng xuất"),
               )
             ],
           ),
         ),
-      body:  Body(),
+      body: const Body(),
     );
     
     

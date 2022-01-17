@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 class AuthenticationScreen extends StatelessWidget {
   final AppController _appController = Get.find();
 
+  AuthenticationScreen({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,11 +24,11 @@ class AuthenticationScreen extends StatelessWidget {
 
             Visibility(
                 visible: _appController.isLoginWidgetDisplayed.value,
-                child: LoginWidget()),
+                child:const LoginWidget()),
             Visibility(
                 visible: !_appController.isLoginWidgetDisplayed.value,
-                child: RegistrationWidget()),
-            SizedBox(
+                child:const RegistrationWidget()),
+            const SizedBox(
               height: 10,
             ),
             Visibility(

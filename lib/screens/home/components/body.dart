@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'item_card.dart';
 
 class Body extends StatelessWidget {
+  const Body({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,15 +23,15 @@ class Body extends StatelessWidget {
                 .copyWith(fontWeight: FontWeight.bold),
           ),
         ),
-        SizedBox(height: 20),
-        Categories(),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
+        const Categories(),
+        const SizedBox(height: 20),
         Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
             child: GridView.builder(
                 itemCount: products.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: kDefaultPaddin,
                   crossAxisSpacing: kDefaultPaddin,
@@ -47,7 +49,7 @@ class Body extends StatelessWidget {
                     )),
           ),
         ),
-        SizedBox(height:50),
+        const SizedBox(height:50),
       ],
     );
   }

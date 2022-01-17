@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element, file_names
+
 import 'package:do_an_mon_hoc/constants/app_constants.dart';
 import 'package:do_an_mon_hoc/constants/firebase.dart';
 import 'package:do_an_mon_hoc/helper/showLoading.dart';
@@ -32,7 +34,7 @@ class UserController extends GetxController {
       Get.offAll(() => AuthenticationScreen());
     } else {
       nguoiDung.bindStream(listenToUser());
-      Get.offAll(() => HomeScreen());
+      Get.offAll(() =>const HomeScreen());
     }
   }
 

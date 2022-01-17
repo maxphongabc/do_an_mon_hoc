@@ -14,10 +14,12 @@ void main() async {
       Get.put(UserController());
       // Get.put(ProducsController());
   });
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget{
+  const MyApp({Key key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget{
       title: "Do An Mon Hoc",
       theme:ThemeData(primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home:const HomeScreen(),
     );
   }
 }

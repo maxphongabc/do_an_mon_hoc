@@ -30,7 +30,7 @@ const String kAddressNullError = "Please Enter your address";
 
 
 OutlineInputBorder outlineInputBorder() {
-  return OutlineInputBorder(
-    borderSide: const BorderSide(color: kTextColor),
+  return const OutlineInputBorder(
+    borderSide: BorderSide(color: kTextColor),
   );
 }
