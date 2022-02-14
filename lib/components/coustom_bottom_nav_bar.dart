@@ -1,8 +1,9 @@
 import 'package:do_an_mon_hoc/components/enums.dart';
+import 'package:do_an_mon_hoc/constants.dart';
 import 'package:do_an_mon_hoc/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../constants.dart';
+
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({
     Key key,
@@ -13,8 +14,7 @@ class CustomBottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: prefer_const_declarations
-    final Color inActiveIconColor = const Color(0xFFB6B6B6);
+    Color inActiveIconColor =  Color(0xFFB6B6B6);
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 14),
       decoration: BoxDecoration(
@@ -48,10 +48,6 @@ class CustomBottomNavBar extends StatelessWidget {
               ),
                  IconButton(
                 icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
                 onPressed: () {},
               ),
               IconButton(

@@ -1,7 +1,7 @@
 import 'package:do_an_mon_hoc/constants/app_constants.dart';
 import 'package:do_an_mon_hoc/constants/firebase.dart';
 import 'package:do_an_mon_hoc/helper/showLoading.dart';
-import 'package:do_an_mon_hoc/model/nguoidung.dart';
+import 'package:do_an_mon_hoc/model/User.dart';
 import 'package:do_an_mon_hoc/screens/home/home_screen.dart';
 import 'package:do_an_mon_hoc/screens/sign_in/signin_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -17,7 +17,7 @@ class UserController extends GetxController {
   TextEditingController password = TextEditingController();
   TextEditingController password2= TextEditingController();
   String usersCollection = "User";
-  Rx<NguoiDung> nguoiDung = NguoiDung().obs;
+  Rx<Users> nguoiDung = Users().obs;
 
   @override
   void onReady() {
@@ -86,10 +86,6 @@ class UserController extends GetxController {
     email.clear();
     password.clear();
   }
-  _clearpassControllers(){
-    password2.clear();
-    password.clear();
-  }
 
   updateUserData(Map<String, dynamic> data) {
     logger.i("UPDATED");
@@ -99,9 +95,9 @@ class UserController extends GetxController {
         .update(data);
   }
 
-  Stream<NguoiDung> listenToUser() => firebaseFirestore
+  Stream<Users> listenToUser() => firebaseFirestore
       .collection(usersCollection)
       .doc(firebaseUser.value.uid)
       .snapshots()
-      .map((snapshot) => NguoiDung.fromSnapshot(snapshot));
+      .map((snapshot) => Users.fromSnapshot(snapshot));
 }
