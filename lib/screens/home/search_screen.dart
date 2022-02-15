@@ -1,6 +1,6 @@
 import 'package:do_an_mon_hoc/constants.dart';
 import 'package:do_an_mon_hoc/controllers/productController.dart';
-import 'package:do_an_mon_hoc/model/Product.dart';
+import 'package:do_an_mon_hoc/model/ProductModel.dart';
 import 'package:do_an_mon_hoc/screens/details/details_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +50,7 @@ class _SearchScreenState extends State<SearchScreen>{
                    ),
                    ),
                    CustomTextt(
-                     text:'Search...',
+                     text:'Tìm kiếm...',
                      fontSize: 20,
                      alignment: Alignment.bottomCenter,
                    ),

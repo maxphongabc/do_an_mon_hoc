@@ -1,9 +1,10 @@
-import 'package:do_an_mon_hoc/model/Product.dart';
+import 'package:do_an_mon_hoc/model/ProductModel.dart';
 import 'package:do_an_mon_hoc/screens/details/details_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class CategoryProductScreen extends StatelessWidget{
   String categoryName;
   List<ProductModel> products;

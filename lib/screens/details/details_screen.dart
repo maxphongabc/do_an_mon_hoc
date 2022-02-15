@@ -1,6 +1,5 @@
-
 import 'package:do_an_mon_hoc/constants.dart';
-import 'package:do_an_mon_hoc/model/Product.dart';
+import 'package:do_an_mon_hoc/model/ProductModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -59,23 +58,21 @@ class ProductDetailsScreen extends StatelessWidget{
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               RoundedShapeInfo(
-                                title:  'Size',
+                                title:  'Ram',
                                 content: CustomTextt(
-                                  text: productsmodel.Name,
+                                  text: productsmodel.Ram+' Gb',
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                   alignment: Alignment.center,
                                 ),
                               ),
-                              RoundedShapeInfo(
-                                title:  'Màu sắc',
-                                content: Container(
-                                  height: 22,
-                                  width: 22,
-                                  decoration:BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                    //color: productsmodel.color,
-                                  ),
+                            RoundedShapeInfo(
+                                title:  'Rom',
+                                content: CustomTextt(
+                                  text: productsmodel.Rom+' Gb',
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  alignment: Alignment.center,
                                 ),
                               ),
                             ],                      
@@ -85,13 +82,13 @@ class ProductDetailsScreen extends StatelessWidget{
                           ),
                           CustomTextt(
                             text: 'Chi tiết',
-                            fontSize: 18,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                           SizedBox(height: 15),
                           CustomTextt(
                             text:productsmodel.Description,
-                            fontSize: 14,
+                            fontSize: 20,
                             height: 2,
                           )
                         ],
@@ -114,12 +111,12 @@ class ProductDetailsScreen extends StatelessWidget{
                       children: [
                         CustomTextt(
                           text: 'Giá',
-                          fontSize: 12,
+                          fontSize: 25,
                           color: Colors.grey,
                         ),
                         CustomTextt(
                           text: '\$${productsmodel.Price}',
-                          fontSize: 18,
+                          fontSize: 36,
                           fontWeight: FontWeight.bold,
                           color: primaryColor,
                         ),
