@@ -1,7 +1,7 @@
 import 'package:do_an_mon_hoc/constants/app_constants.dart';
 import 'package:do_an_mon_hoc/constants/firebase.dart';
 import 'package:do_an_mon_hoc/helper/showLoading.dart';
-import 'package:do_an_mon_hoc/model/User.dart';
+import 'package:do_an_mon_hoc/model/UserModel.dart';
 import 'package:do_an_mon_hoc/screens/home/home_screen.dart';
 import 'package:do_an_mon_hoc/screens/sign_in/signin_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -12,6 +12,7 @@ class UserController extends GetxController {
   static UserController instance = Get.find();
   Rx<User> firebaseUser;
   RxBool isLoggedIn = false.obs;
+  
   TextEditingController name = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
@@ -77,7 +78,6 @@ class UserController extends GetxController {
       "name": name.text.trim(),
       "id": userId,
       "email": email.text.trim(),
-      "cart": []
     });
   }
 

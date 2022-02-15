@@ -9,5 +9,6 @@ class Binding extends Bindings{
     Get.lazyPut(() => AppController());
     Get.lazyPut(() => UserController());
     Get.lazyPut(() => ProductController());
+    AppController.instance;
   }
 }

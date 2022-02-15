@@ -1,8 +1,10 @@
 import 'package:do_an_mon_hoc/components/enums.dart';
 import 'package:do_an_mon_hoc/constants.dart';
 import 'package:do_an_mon_hoc/screens/home/home_screen.dart';
+import 'package:do_an_mon_hoc/screens/home/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({
@@ -44,15 +46,19 @@ class CustomBottomNavBar extends StatelessWidget {
                       : inActiveIconColor,
                 ),
                 onPressed: () =>
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=> HomeScreen())),
+                   Get.to(HomeScreen()),
               ),
                  IconButton(
-                icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
-                onPressed: () {},
+                icon: Icon(Icons.card_travel_outlined),
+                onPressed: () {
+
+                },
               ),
               IconButton(
-                icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
-                onPressed: () {},
+                icon: Icon(Icons.person,),
+                onPressed: () {
+                  Get.to(ProfileScreen());
+                },
               ),
             ],
           )),

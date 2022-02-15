@@ -1,6 +1,6 @@
 
 class ProductModel {
-  String Name,Image,Category,Price,Description,Id,Quantity;
+  String Name,Image,Category,Price,Description,Id,Quantity,Ram,Rom;
   ProductModel({
     this.Id,
     this.Quantity,
@@ -9,6 +9,8 @@ class ProductModel {
     this.Name,
     this.Price,
     this.Description,
+    this.Rom,
+    this.Ram,
   });
   ProductModel.fromJson(Map<dynamic,dynamic>map){
     Id= map['Id'];
@@ -18,6 +20,8 @@ class ProductModel {
     Category=map['Category'];
     Price=map['Price'];
     Description=map['Descriptions'];
+    Ram = map['Ram'];
+    Rom = map['Rom'];
   }
   toJson(){
     return{
@@ -28,7 +32,8 @@ class ProductModel {
       'Price':Price,
       'Descriptions':Description,
       'Quantity':Quantity,
-
+      'Ram':Ram,
+      'Rom':Rom,
     };
   }
 }
