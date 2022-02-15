@@ -17,4 +17,18 @@ class Users{
     email = snapshot.data()[EMAIL];
     id = snapshot.data()[ID];
   }
+  toJson() {
+    return {
+      'id': id,
+      'email': email,
+      'name': name,
+      // 'pic': pic,
+    };
+  }
+  Users.fromJson(Map<dynamic, dynamic> map) {
+    id = map['userId'];
+    email = map['email'];
+    name = map['name'];
+    //pic = map['pic'];
+  }
 }

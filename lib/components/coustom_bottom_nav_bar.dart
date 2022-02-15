@@ -1,5 +1,6 @@
 import 'package:do_an_mon_hoc/components/enums.dart';
 import 'package:do_an_mon_hoc/constants.dart';
+import 'package:do_an_mon_hoc/screens/cart/cartscreen.dart';
 import 'package:do_an_mon_hoc/screens/home/home_screen.dart';
 import 'package:do_an_mon_hoc/screens/home/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,7 @@ class CustomBottomNavBar extends StatelessWidget {
                  IconButton(
                 icon: Icon(Icons.card_travel_outlined),
                 onPressed: () {
-
+                  Get.to(CartScreen());
                 },
               ),
               IconButton(

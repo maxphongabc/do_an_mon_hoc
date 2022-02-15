@@ -1,4 +1,5 @@
 import 'package:do_an_mon_hoc/components/custom_text.dart';
+import 'package:do_an_mon_hoc/screens/details/details_screen.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -40,6 +41,43 @@ class CustomButton extends StatelessWidget {
               weight: FontWeight.normal,
             ),
           )
+        ),
+      ),
+    );
+  }
+}
+class CustomButtonSocial extends StatelessWidget {
+  final VoidCallback onPressedFn;
+  final String image;
+  final String title;
+
+  const CustomButtonSocial({
+     this.onPressedFn,
+     this.image,
+     this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return OutlinedButton(
+      onPressed: onPressedFn,
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 14, horizontal: 30),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Image.asset(
+              'assets/images/icons/$image.png',
+              fit: BoxFit.cover,
+              height: 20,
+              width: 20,
+            ),
+            CustomTextt(
+              text: title,
+              fontSize: 14,
+            ),
+            Container(width: 20),
+          ],
         ),
       ),
     );

@@ -5,7 +5,8 @@ showLoading(){
   Get.defaultDialog(
     title: "Đang tải...",
     content: CircularProgressIndicator(),
-    barrierDismissible: false
+    barrierDismissible: false,
+    textCancel: "Hủy"
   );
 }
 

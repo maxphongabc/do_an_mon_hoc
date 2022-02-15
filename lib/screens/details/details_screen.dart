@@ -60,16 +60,16 @@ class ProductDetailsScreen extends StatelessWidget{
                               RoundedShapeInfo(
                                 title:  'Ram',
                                 content: CustomTextt(
-                                  text: productsmodel.Ram,
+                                  text: productsmodel.Ram+' Gb',
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                   alignment: Alignment.center,
                                 ),
                               ),
                             RoundedShapeInfo(
-                                title:  'Bộ nhớ',
+                                title:  'Rom',
                                 content: CustomTextt(
-                                  text: productsmodel.Rom,
+                                  text: productsmodel.Rom+' Gb',
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                   alignment: Alignment.center,

@@ -79,31 +79,6 @@ class HomeScreen extends StatelessWidget{
                 SizedBox(height: 30,),
                 ListProductScreen(),
                 SizedBox(height: 30,),
-                Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Xiaomi",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    ),
-                    GestureDetector(
-                      onTap: (){
-                        Get.to(
-                          CategoryProductScreen(
-                          categoryName:'Sản phẩm',
-                          products: controller.products,
-                        ));
-                      },
-                      child: Text(
-                        "Xem tất cả",
-                        style: TextStyle(fontSize: 16),
-                        ),
-                    ),
-                ],
-                ),
             ],
           ),
         ),

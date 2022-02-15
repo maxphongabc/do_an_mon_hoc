@@ -22,7 +22,7 @@ class AuthenticationScreen extends StatelessWidget {
 
             Visibility(
                 visible: _appController.isLoginWidgetDisplayed.value,
-                child: LoginWidget()),
+                child: LoginScreen()),
             Visibility(
                 visible: !_appController.isLoginWidgetDisplayed.value,
                 child: RegistrationWidget()),

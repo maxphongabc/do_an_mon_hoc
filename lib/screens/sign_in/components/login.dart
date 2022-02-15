@@ -2,7 +2,7 @@ import 'package:do_an_mon_hoc/components/controlles.dart';
 import 'package:do_an_mon_hoc/components/custom_btn.dart';
 import 'package:flutter/material.dart';
 
-class LoginWidget extends StatelessWidget {
+class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
@@ -75,9 +75,20 @@ borderRadius: BorderRadius.circular(20)
                 text: "Đăng nhập", onTap: (){
                   userController.signIn();
             }),
-          )
+          ),
+          //  SizedBox(
+          //         height: 20,
+          //       ),
+          //       CustomButtonSocial(
+          //         title: 'Đăng nhập bằng tài khoản Google',
+          //         image: 'google',
+          //         onPressedFn: () {
+          //           userController.signInWithGoogleAccount();
+          //         },
+          //       )
         ],
       ),
     );
+
   }
 }

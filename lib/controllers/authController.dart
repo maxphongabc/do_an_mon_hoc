@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:do_an_mon_hoc/constants/app_constants.dart';
 import 'package:do_an_mon_hoc/constants/firebase.dart';
 import 'package:do_an_mon_hoc/helper/showLoading.dart';
@@ -12,13 +13,16 @@ class UserController extends GetxController {
   static UserController instance = Get.find();
   Rx<User> firebaseUser;
   RxBool isLoggedIn = false.obs;
-  
+  final _auth = FirebaseAuth.instance;
   TextEditingController name = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController password2= TextEditingController();
   String usersCollection = "User";
   Rx<Users> nguoiDung = Users().obs;
+  Rxn<User> _user = Rxn<User>();
+
+  String get user => _user?.value?.email;
 
   @override
   void onReady() {
@@ -39,7 +43,7 @@ class UserController extends GetxController {
 
   void signIn() async {
     try {
-      // showLoading();
+      showLoading();
       await auth
           .signInWithEmailAndPassword(
               email: email.text.trim(), password: password.text.trim())
@@ -78,6 +82,7 @@ class UserController extends GetxController {
       "name": name.text.trim(),
       "id": userId,
       "email": email.text.trim(),
+       "timestamp":FieldValue.serverTimestamp()
     });
   }
 
