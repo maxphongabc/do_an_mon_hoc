@@ -1,4 +1,5 @@
 import 'package:do_an_mon_hoc/constants.dart';
+import 'package:do_an_mon_hoc/controllers/cartController.dart';
 import 'package:do_an_mon_hoc/model/ProductModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -122,13 +123,21 @@ class ProductDetailsScreen extends StatelessWidget{
                         ),
                       ],
                     ),  
-                    Container(
-                       height: 50,
-                      width: 146,
-                      child: CustomButton('Thêm vào giỏ',
-                      (){}
-                      ),                                       
-                    )
+                    // GetBuilder<CartController>(
+                    //   builder: (controller)=>
+                      Container(
+                      child: Container(
+                         height: 50,
+                        width: 146,
+                        child: CustomButton('Thêm vào giỏ',
+                        (){
+                          Get.snackbar("","Đã thêm sản phẩm "+productsmodel.Name+" vào giỏ hàng" );
+                          // controller.addProductToCart(productsmodel);
+                        }
+                        ),                                       
+                      ),
+                      ),
+                    //),
                   ],
                 ),
               ),

@@ -13,7 +13,6 @@ class UserController extends GetxController {
   static UserController instance = Get.find();
   Rx<User> firebaseUser;
   RxBool isLoggedIn = false.obs;
-  final _auth = FirebaseAuth.instance;
   TextEditingController name = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
@@ -21,7 +20,6 @@ class UserController extends GetxController {
   String usersCollection = "User";
   Rx<Users> nguoiDung = Users().obs;
   Rxn<User> _user = Rxn<User>();
-
   String get user => _user?.value?.email;
 
   @override
@@ -58,14 +56,15 @@ class UserController extends GetxController {
 
   void signUp() async {
     try {
-        await auth
+      showLoading();
+         await auth
             .createUserWithEmailAndPassword(
                 email: email.text.trim(), password: password.text.trim())
             .then((result) {
           String _userId = result.user.uid;
           _addUserToFirestore(_userId);
           _clearControllers();
-        });
+        });           
     } catch (e) {
       debugPrint(e.toString());
       Get.snackbar("Đăng ký thất bại", "Thử lại");
@@ -79,10 +78,12 @@ class UserController extends GetxController {
 
   _addUserToFirestore(String userId) {
     firebaseFirestore.collection(usersCollection).doc(userId).set({
-      "name": name.text.trim(),
+      "name": email.text.trim(),
       "id": userId,
       "email": email.text.trim(),
-       "timestamp":FieldValue.serverTimestamp()
+      "timestamp":FieldValue.serverTimestamp(),
+       "cart": [],
+      "image":"https://firebasestorage.googleapis.com/v0/b/doanmonhoc-98c69.appspot.com/o/user_image%2Fuser.png?alt=media&token=d55208e2-d96f-41c9-b99c-8aa14dbd6c4c",  
     });
   }
 
