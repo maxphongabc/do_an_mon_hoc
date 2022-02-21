@@ -25,10 +25,11 @@ class ProfileScreen extends StatelessWidget{
                             radius: 60,
                             backgroundImage:
                                 AssetImage('assets/images/logo.png'),
-                            // foregroundImage:
-                            //     controller.currentUser!.pic != 'default'
-                            //         ? NetworkImage(controller.currentUser!.pic)
-                            //         : null,
+                                foregroundImage: userController.nguoiDung.value.image!= ""
+                                ?
+                                NetworkImage(
+                                  "\$${userController.nguoiDung.value.image}",
+                                ):null,
                           ),
                           SizedBox(
                             width: 30,
@@ -36,15 +37,13 @@ class ProfileScreen extends StatelessWidget{
                           Column(
                             children: [
                               CustomTextt(
-                                text: userController.nguoiDung.value.email,
-                                 //fontSize: 26,
+                                text: userController.nguoiDung.value.email,                          
                               ),
                               SizedBox(
                                 height: 6,
                               ),
                               CustomTextt(
                                 text: userController.nguoiDung.value.name,
-                                //fontSize: 14,
                               ),
                             ],
                           ),
@@ -57,7 +56,6 @@ class ProfileScreen extends StatelessWidget{
                         iconName: '1',
                         title: 'Chỉnh sửa thông tin',
                         onTapFn: () {
-                          // Get.to(EditProfileView());
                         },
                       ),
                       CustomListTile(

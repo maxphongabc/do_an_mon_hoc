@@ -1,8 +1,11 @@
 import 'package:do_an_mon_hoc/components/coustom_bottom_nav_bar.dart';
 import 'package:do_an_mon_hoc/components/enums.dart';
+import 'package:do_an_mon_hoc/constants.dart';
 import 'package:do_an_mon_hoc/controllers/productController.dart';
 import 'package:do_an_mon_hoc/screens/details/details_screen.dart';
 import 'package:do_an_mon_hoc/screens/home/category_screen.dart';
+import 'package:do_an_mon_hoc/screens/home/components/CategoryList_screen.dart';
+import 'package:do_an_mon_hoc/screens/home/components/ProductList_screen.dart';
 import 'package:do_an_mon_hoc/screens/home/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -84,114 +87,6 @@ class HomeScreen extends StatelessWidget{
         ),
       ),
       bottomNavigationBar: CustomBottomNavBar(selectedMenu:MenuState.home),
-    );
-  }
-}
-class ListCategoryScreen extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return GetBuilder<ProductController>(
-      builder: (controller)=>Container(
-      height: 90,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: controller.categories.length,
-        itemBuilder: (context,index){
-          return GestureDetector(
-            onTap: (){
-              Get.to(
-                CategoryProductScreen(
-                categoryName:controller.categories[index].name,
-                products:controller.products
-                .where((product)=>
-                 controller.categories[index].name == product.Category,
-                ).toList(),
-              ));
-            },
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Material(
-                  elevation: 1,
-                  borderRadius: BorderRadius.circular(50),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: Colors.white,
-                    ),
-                    height: 60,
-                    width: 60,
-                    child: Padding(
-                      padding: EdgeInsets.all(14),
-                      child: Image.network(
-                        controller.categories[index].image,
-                      ),
-                    ),
-                  ),
-                ),
-                Text(controller.categories[index].name,style: TextStyle(fontSize: 16),),
-              ],
-            ),
-          );
-        }, separatorBuilder: (context,index) { 
-          return SizedBox(width: 20,);
-         },
-      ),
-      )
-    );
-    
-  }
-}
-class ListProductScreen extends StatelessWidget{
-  ListProductScreen({Key key}):super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return GetBuilder<ProductController>(
-      builder:(controller)=>
-       Container(
-        height: 320,
-        child: ListView.separated(
-          scrollDirection:Axis.horizontal,
-          itemCount: 6,
-          itemBuilder: (context,index){
-            return GestureDetector(
-              onTap: (){
-                 Get.to(ProductDetailsScreen(controller.products[index]),);
-              },
-              child: Container(
-                width: 164,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(4),
-                        color: Colors.white,
-                    ),
-                    height: 240,
-                    width: 164,
-                    child: Image.network(controller.products[index].Image,
-                    fit: BoxFit.cover,
-                    ),
-                    ),
-                    Text(controller.products[index].Name,
-                    style: TextStyle(fontSize: 16),
-                    ),
-                    Text('\$${controller.products[index].Price}',
-                    style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-              ),
-            );
-        }, separatorBuilder: (context,index) {
-          return SizedBox(
-            width: 15,
-          );
-          },
-        ),
-      ),
     );
   }
 }

@@ -1,30 +1,45 @@
+ 
 class CartModel {
-   String name, image, price, productId;
-   int quantity;
+  static const ID = "id";
+  static const IMAGE = "image";
+  static const NAME = "name";
+  static const QUANTITY = "quantity";
+  static const COST = "cost";
+  static const PRICE = "price";
+  static const PRODUCT_ID = "productId";
 
-  CartModel({
-     this.name,
-     this.image,
-     this.price,
-     this.productId,
-    this.quantity = 1,
-  });
 
-  CartModel.fromJson(Map<dynamic, dynamic> map) {
-    name = map['name'];
-    image = map['image'];
-    price = map['price'];
-    productId = map['productId'];
-    quantity = map['quantity'];
+  String id;
+  String image;
+  String name;
+  int quantity;
+  double cost;
+   String productId;
+   double price;
+
+
+
+  CartModel({this.productId, this.id, this.image, this.name, this.quantity, this.cost});
+
+  CartModel.fromMap(Map<String, dynamic> data){
+    id = data[ID];
+    image = data[IMAGE];
+    name = data[NAME];
+    quantity = data[QUANTITY];
+    cost = data[COST].toDouble();
+    productId = data[PRODUCT_ID];
+    price = data[PRICE].toDouble();
+
   }
 
-  toJson() {
-    return {
-      'name': name,
-      'image': image,
-      'price': price,
-      'productId': productId,
-      'quantity': quantity,
-    };
-  }
+  Map toJson() => {
+    ID: id, 
+    PRODUCT_ID: productId,
+    IMAGE: image, 
+    NAME: name,
+    QUANTITY: quantity,
+    COST: price * quantity,
+    PRICE: price
+  };
+
 }

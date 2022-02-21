@@ -76,16 +76,13 @@ borderRadius: BorderRadius.circular(20)
                   userController.signIn();
             }),
           ),
-          //  SizedBox(
-          //         height: 20,
-          //       ),
-          //       CustomButtonSocial(
-          //         title: 'Đăng nhập bằng tài khoản Google',
-          //         image: 'google',
-          //         onPressedFn: () {
-          //           userController.signInWithGoogleAccount();
-          //         },
-          //       )
+            // CustomButtonSocial(
+            //       title: 'Đăng nhập bằng Google',
+            //       image: 'google',
+            //       onPressedFn: () {
+            //         userController.signInWithGoogleAccount();
+            //       },
+            //     ),
         ],
       ),
     );
